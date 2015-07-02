@@ -1,0 +1,14 @@
+<template name="modal">
+
+  <div class="modal-container">
+    {{#if tpl}}
+      <div class="modal {{class}}" tabindex="0">
+        <div class="modal-close" data-hide-modal>&times;</div>
+        <div class="modal-content">
+          {{> Template.dynamic template=tpl data=data}}
+        </div>
+      </div>
+    {{/if}}
+  </div>
+
+</template>

@@ -1,0 +1,53 @@
+.modal {
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  overflow: hidden;
+  background-color: rgba(252, 252, 252, .95);
+  background-color: rgba(19, 22, 27, .6);
+  outline: 0;
+  .modal-close {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, .2);
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    &:hover {
+      color: rgba(0, 0, 0, .4);
+      text-decoration: none;
+    }
+  }
+  .modal-content {
+    overflow-x: hidden;
+  }
+}
+
+body > :not(.modal-container) {
+  -webkit-transition: .2s ease-out;
+          transition: .2s ease-out;
+}
+
+@blur: 3px;
+body.modal-visible.blur > :not(.modal-container) {
+  -webkit-transform: scale(.95) translateZ(0);
+          transform: scale(.95) translateZ(0);
+  -webkit-filter: blur(@blur);
+          filter: blur(@blur);
+}
+
+body.modal-visible {
+  overflow: hidden;
+}

@@ -1,0 +1,47 @@
+.modal.side {
+  background: rgba(252, 252, 252, .4);
+  .modal-close {
+    color: whitesmoke;
+    &:hover {
+      color: whitesmoke;
+    }
+  }
+  .modal-content {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 500px;
+    height: 100%;
+    background: white;
+    box-shadow: -1px 0px 2px 0px rgba(0,0,0,0.25);
+    -webkit-animation: slideInRight .3s;
+            animation: slideInRight .3s;
+  }
+  &.removing .modal-content {
+    -webkit-animation: slideOutRight .5s;
+            animation: slideOutRight .5s;
+  }
+}
+
+.modal.side-left {
+  .modal-content {
+    left: 0;
+    right: auto;
+    box-shadow: 1px 0px 2px 0px rgba(0,0,0,0.25);
+    -webkit-animation: slideInLeft .3s;
+            animation: slideInLeft .3s;
+  }
+  .modal.removing {
+    .modal-content {
+      -webkit-animation: slideOutLeft .5s;
+              animation: slideOutLeft .5s;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .modal.side .modal-content {
+    width: 100%;
+  }
+}
