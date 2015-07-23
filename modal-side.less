@@ -11,6 +11,7 @@
     top: 0;
     bottom: 0;
     right: 0;
+    margin: 0;
     width: 500px;
     height: 100%;
     background: white;
@@ -28,20 +29,22 @@
   .modal-content {
     left: 0;
     right: auto;
+    margin: 0;
     box-shadow: 1px 0px 2px 0px rgba(0,0,0,0.25);
     -webkit-animation: slideInLeft .3s;
             animation: slideInLeft .3s;
   }
-  .modal.removing {
-    .modal-content {
+  &.removing .modal-content {
+  // .modal.removing {
+//    .modal-content {
       -webkit-animation: slideOutLeft .5s;
               animation: slideOutLeft .5s;
-    }
+    // }
   }
 }
 
 @media screen and (max-width: 680px) {
-  .modal.side .modal-content {
+  .modal .modal-content {
     width: 100%;
   }
 }
